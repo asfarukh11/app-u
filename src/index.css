@@ -1,13 +1,185 @@
-body {
+/* Reset and General Styles */
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  position: fixed;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+/* Search Bar Styles */
+.search-input-container {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  padding: 15px 20px;
+  z-index: 100;
+  z-index: 100000;
+  background-color: inherit;
+  text-align: center;
+}
+
+.search-input {
+  width: 30%;
+  padding: 8px 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 24px;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+/* Card and Slider Styles */
+.slider-container {
+  position: relative;
+  padding: 20px;
+  margin: 100px auto 0;
+  max-width: 1200px;
+}
+
+.card-list {
+  margin-top: 100px;
+}
+
+.card {
+  width: 15vw; /* Adjust card size within the slider */
+  height: 370px; /* Auto height to maintain aspect ratio based on content */
+  margin: 0.5vw;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.card img {
+  width: 100%;/* Adjust image height based on design needs */
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  flex-basis: 130%;
+  object-fit: fill;
+}
+
+.profile-link {
+  padding: 10px;
+  background-color: goldenrod;
+  color: white;
+  width: 100%;
+  text-align: center;
+  text-decoration: none;
+  font-size: 20px;
+  border-radius: 0 0 10px 10px;
+}
+
+.profile-link:hover {
+  background-color: #b58604;
+}
+
+/* Slider-specific adjustments */
+.slick-slide {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.slick-slide div {
+  display: flex;
+}
+
+.slick-track {
+  display: flex;
+  align-items: stretch;
+}
+
+.slick-arrow {
+  position: fixed;
+  top: 60%;
+  width: 40px;
+  height: 40px;
+  background: #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  line-height: 45px;
+  transform: translateY(-50%);
+  z-index: 999;
+}
+
+.slick-prev {
+  left: 7%; /* Adjusted for visibility */
+}
+
+.slick-next {
+  right: 7%; /* Adjusted for visibility */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .search-input-container {
+    width: 95%;
+    padding: 10px 15px;
+  }
+
+  .slider-container, .card {
+    width: 100%; /* Full width for mobile */
+  }
+
+  .card {
+    height: auto; /* Adaptive height for mobile */
+  }
+}
+
+video {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  z-index: -2;
+  left: 0;
+  object-fit: cover;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  z-index: -10;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .3);
+}
+
+.back-to-home {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  padding: 20px;
+  background-color: goldenrod;
+  color: black;
+  border-radius: 50%;
+}
+
+
+.profile-picture {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
 }
